@@ -1,0 +1,15 @@
+stages:
+  - check
+
+python-checks:
+  image: python:3.11
+  stage: check
+  before_script:
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+    - pip install ruff mypy bandit
+  script:
+    - python -m py_compile app.py
+    - ruff check .
+    - mypy app.py --ignore-missing-imports
+    - bandit -r . -x .venv

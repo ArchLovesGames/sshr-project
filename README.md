@@ -109,7 +109,7 @@ Then open `http://localhost:8501`.
 
 ## Author
 
-- Archisha Singh
+- Shreya Sengupta
 
 ## Acknowledgements
 
